@@ -1,12 +1,12 @@
 # Architecture Document - ACTO SuperAgent MVP
 
-## Goal
+## System Objective
 
 Build a life-sciences AI SuperAgent that helps pharma field teams and MSLs during HCP conversations by routing user questions to the right specialized skill, generating structured responses, logging CRM-ready actions, and flagging compliance risk in seconds.
 
-This project simulates an ACTO-style field rep assistant for a live call with Dr. Raj, an oncologist at Sunnybrook Hospital in Toronto. The agent is designed to support medical and commercial conversations while keeping responses concise, structured, and compliance-aware.
+This project demonstrates a multi-skill AI copilot designed for pharmaceutical field teams and medical science liaisons (MSLs). The system routes user requests to specialized reasoning modules, generates structured responses, surfaces compliance considerations, and produces CRM-ready actions.
 
-## Agent Loop
+## System Architecture
 
 This solution uses a full-stack AI agent workflow with a FastAPI backend, React frontend, and Anthropic Claude reasoning layer.
 
@@ -28,7 +28,7 @@ This solution uses a full-stack AI agent workflow with a FastAPI backend, React 
 
 8. **crm_next_action** - When relevant, the agent suggests Veeva/Salesforce-style CRM logging and next-best-action follow-ups.
 
-## Active Skills
+## Core Agent Capabilities
 
 1. **Drug Information**
    - Handles approved indications, mechanisms of action, clinical data, and drug-related questions.
