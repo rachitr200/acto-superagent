@@ -1,153 +1,76 @@
 # ACTO SuperAgent – AI Copilot for Pharma Field Teams
 
-A full-stack AI agent demo built to showcase the exact capabilities of an ACTO AX Engineer role.
-Built with FastAPI + React + Anthropic Claude.
+## Overview
 
-## What It Does
+ACTO SuperAgent is a full-stack AI copilot demo designed for pharmaceutical field teams, including Medical Science Liaisons and Sales Representatives.
 
-Simulates an ACTO SuperAgent — an AI assistant for pharma field reps (MSLs / Sales Reps) during HCP calls.
+The project simulates how an AI assistant can support healthcare professional conversations by helping users access drug information, respond to objections, generate CRM-ready actions, identify compliance risks, and personalize responses using HCP context.
 
-**## Core Agent Capabilities:**
--  **Drug Information** — approved indications, mechanism of action, clinical data
--  **Objection Handling** — evidence-based responses to physician pushback
--  **CRM Action** — Veeva/Salesforce logging and next best action suggestions
--  **Compliance Guard** — off-label promotion detection, FDA 21 CFR Part 11 awareness
--  **HCP Profile** — KOL context, engagement history, interaction preferences
-
-**Agent architecture features:**
-- Structured JSON output from Claude (skill + reasoning + response + crm_action + compliance_flag)
-- Expandable agent reasoning panel on every response
-- Streaming endpoint (SSE) available at `/chat/stream`
-- Token usage tracking
-- Pydantic validation on all inputs
-- Full conversation history maintained client-side
+This project was built to demonstrate capabilities aligned with the ACTO Agent Experience Engineer role.
 
 ---
 
-## Project Structure
+## Problem
 
-```
-acto-superagent/
-├── backend/
-│   ├── main.py              # FastAPI app, /chat and /chat/stream endpoints
-│   ├── requirements.txt
-│   └── .env.example         # Copy to .env and add your API key
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx          # Main layout and state management
-│   │   ├── config.js        # Skill metadata, quick prompts, HCP data
-│   │   ├── hooks/useApi.js  # API communication layer
-│   │   └── components/
-│   │       ├── Sidebar.jsx  # Skill panel, HCP card, quick prompts
-│   │       └── Message.jsx  # User/Agent/System message components
-│   ├── index.html
-│   ├── vite.config.js       # Proxies /api → localhost:8000
-│   └── package.json
-└── README.md
-```
+Pharmaceutical field teams often need to quickly prepare for HCP meetings, answer product-related questions, document interactions, and stay compliant.
+
+These workflows can be time-consuming because information may be spread across product material, CRM notes, compliance guidelines, and physician profiles.
+
+ACTO SuperAgent demonstrates how an AI copilot can bring these workflows into one assistant experience.
 
 ---
 
-## Setup
+## Solution
 
-### 1. Get your Anthropic API key
-Go to https://console.anthropic.com and copy your API key.
+The application provides a conversational AI interface where a field representative can ask questions such as:
 
-### 2. Backend setup
+- What are the approved indications for Keytruda?
+- How should I respond to a safety objection?
+- What should I log in CRM after this visit?
+- Is this question a compliance risk?
+- What is important to know about this HCP?
 
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate        # Mac/Linux
-# OR
-venv\Scripts\activate           # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create .env file
-cp .env.example .env
-# Open .env and paste your Anthropic API key
-```
-
-### 3. Frontend setup
-
-```bash
-cd frontend
-npm install
-```
+The agent classifies each request into a specific skill and returns a structured response.
 
 ---
 
-## Running the App
+## Core Agent Capabilities
 
-Open **two terminals** in VS Code:
+### Drug Information
 
-**Terminal 1 — Backend:**
-```bash
-cd backend
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-uvicorn main:app --reload --port 8000
-```
+Provides support for drug-related questions such as approved indications, clinical data, and mechanism of action.
 
-**Terminal 2 — Frontend:**
-```bash
-cd frontend
-npm run dev
-```
+### Objection Handling
 
-Open http://localhost:5173 in your browser.
+Helps field representatives respond to physician concerns using professional and evidence-based language.
 
----
+### CRM Action
 
-## API Endpoints
+Generates CRM-ready summaries, follow-up actions, and next-best-action recommendations.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/health` | Health check |
-| POST | `/chat` | Full response (returns parsed JSON) |
-| POST | `/chat/stream` | Streaming response (SSE) |
+### Compliance Guard
 
-### Example request body
-```json
-{
-  "messages": [
-    { "role": "user", "content": "What are the approved indications for Keytruda?" }
-  ]
-}
-```
+Flags potential off-label, regulatory, or promotional risk.
 
-### Example response
-```json
-{
-  "success": true,
-  "data": {
-    "skill": "Drug Information",
-    "reasoning": "Query is about approved FDA indications — routing to Drug Information skill.",
-    "response": "Keytruda (pembrolizumab) is approved for 30+ indications...",
-    "crm_action": "Log drug inquiry: Keytruda indications discussed.",
-    "compliance_flag": null
-  },
-  "usage": { "input_tokens": 412, "output_tokens": 98 }
-}
-```
+### HCP Profile
+
+Uses physician context to personalize responses and recommendations.
 
 ---
 
-## Tech Stack
+## Architecture
 
-| Layer | Technology |
-|-------|-----------|
-| LLM | Anthropic Claude (claude-opus-4-5) |
-| Backend | Python, FastAPI, Uvicorn |
-| Validation | Pydantic v2 |
-| Frontend | React 18, Vite |
-| API client | Fetch API with SSE streaming |
-| Styling | CSS-in-JS (inline styles + CSS variables) |
+The system uses a simple full-stack architecture:
 
----
-
-## Built By
-Rachit Raj — built as a demo for the ACTO AX Engineer role.
+```text
+User Question
+     ↓
+React Frontend
+     ↓
+FastAPI Backend
+     ↓
+OpenAI GPT-4o-mini
+     ↓
+Structured JSON Response
+     ↓
+React UI Display
