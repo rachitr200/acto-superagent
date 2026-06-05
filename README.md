@@ -1,4 +1,4 @@
-# ACTO SuperAgent — Life Sciences AI Field Rep Assistant
+# ACTO SuperAgent – AI Copilot for Pharma Field Teams
 
 A full-stack AI agent demo built to showcase the exact capabilities of an ACTO AX Engineer role.
 Built with FastAPI + React + Anthropic Claude.
@@ -7,12 +7,12 @@ Built with FastAPI + React + Anthropic Claude.
 
 Simulates an ACTO SuperAgent — an AI assistant for pharma field reps (MSLs / Sales Reps) during HCP calls.
 
-**5 active skills with live routing:**
-- 💊 **Drug Information** — approved indications, mechanism of action, clinical data
-- 🗣️ **Objection Handling** — evidence-based responses to physician pushback
-- 🗄️ **CRM Action** — Veeva/Salesforce logging and next best action suggestions
-- 🛡️ **Compliance Guard** — off-label promotion detection, FDA 21 CFR Part 11 awareness
-- 📋 **HCP Profile** — KOL context, engagement history, interaction preferences
+**## Core Agent Capabilities:**
+-  **Drug Information** — approved indications, mechanism of action, clinical data
+-  **Objection Handling** — evidence-based responses to physician pushback
+-  **CRM Action** — Veeva/Salesforce logging and next best action suggestions
+-  **Compliance Guard** — off-label promotion detection, FDA 21 CFR Part 11 awareness
+-  **HCP Profile** — KOL context, engagement history, interaction preferences
 
 **Agent architecture features:**
 - Structured JSON output from Claude (skill + reasoning + response + crm_action + compliance_flag)
