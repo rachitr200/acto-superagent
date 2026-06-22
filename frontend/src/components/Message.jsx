@@ -45,23 +45,32 @@ export function AgentMessage({ data, isStreaming }) {
           </div>
         )}
 
-        {data.reasoning && (
-          <div style={styles.reasoningBlock}>
-            <button
-              style={styles.reasoningHeader}
-              onClick={() => setReasoningOpen(o => !o)}
-            >
-              <span></span>
-              <span>agent reasoning</span>
-              <span style={{ marginLeft: 'auto', fontSize: 10, opacity: 0.6 }}>
-                {reasoningOpen ? '▲' : '▼'}
-              </span>
-            </button>
-            {reasoningOpen && (
-              <div style={styles.reasoningBody}>{data.reasoning}</div>
-            )}
-          </div>
-        )}
+{data.reasoning && (
+  <div style={styles.reasoningBlock}>
+    <button
+      style={styles.reasoningHeader}
+      onClick={() => setReasoningOpen(o => !o)}
+    >
+      <span style={{ fontWeight: 600 }}>Decision Trace</span>
+
+      <span
+        style={{
+          marginLeft: 'auto',
+          fontSize: 10,
+          opacity: 0.6
+        }}
+      >
+        {reasoningOpen ? '▲' : '▼'}
+      </span>
+    </button>
+
+    {reasoningOpen && (
+      <div style={styles.reasoningBody}>
+        {data.reasoning}
+      </div>
+    )}
+  </div>
+)}
 
         <div style={styles.agentBubble}>{data.response}</div>
 
