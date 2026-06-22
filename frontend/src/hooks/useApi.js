@@ -1,5 +1,5 @@
-const API_BASE = 'https://-superagent-api.onrender.com'
 
+const API_BASE = 'https://acto-superagent-api.onrender.com'
 export async function sendMessage(messages) {
   const response = await fetch(`${API_BASE}/chat`, {
     method: 'POST',
