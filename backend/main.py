@@ -15,11 +15,11 @@ app = FastAPI(title=" SuperAgent API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "https://rachitr200.github.io",
-        "https://rachitr200.github.io/-superagent",
-    ],
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://rachitr200.github.io",
+    "https://rachitr200.github.io/acto-superagent",
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
