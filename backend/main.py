@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="ACTO SuperAgent API", version="1.0.0")
+app = FastAPI(title=" SuperAgent API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,7 +18,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         "https://rachitr200.github.io",
-        "https://rachitr200.github.io/acto-superagent",
+        "https://rachitr200.github.io/-superagent",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -29,7 +29,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 OPENAI_MODEL = "gpt-4o-mini"
 
-SYSTEM_PROMPT = """You are an ACTO SuperAgent — a pharma field rep AI assistant purpose-built for life sciences commercial and medical teams.
+SYSTEM_PROMPT = """You are an  SuperAgent — a pharma field rep AI assistant purpose-built for life sciences commercial and medical teams.
 
 You are currently assisting with a call with Dr. Raj, Oncologist at Sunnybrook Hospital, Toronto.
 HCP Profile: ~40 patients/week, specialist in solid tumors and immunotherapy, early adopter of checkpoint inhibitors, data-driven communicator.
@@ -73,7 +73,7 @@ class HCPContext(BaseModel):
 
 @app.get("/")
 def root():
-    return {"status": "ACTO SuperAgent API running", "version": "1.0.0"}
+    return {"status": " SuperAgent API running", "version": "1.0.0"}
 
 
 @app.get("/health")

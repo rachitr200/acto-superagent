@@ -84,7 +84,7 @@ export default function App() {
             </div>
           </div>
           <div style={styles.complianceBadge}>
-            🛡️ FDA 21 CFR Part 11 active
+             FDA 21 CFR Part 11 active
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function App() {
 
           {error && (
             <div style={styles.errorBar}>
-              ⚠️ {error}
+               {error}
             </div>
           )}
 

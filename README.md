@@ -1,12 +1,12 @@
-# ACTO SuperAgent – AI Copilot for Pharma Field Teams
+#  SuperAgent – AI Copilot for Pharma Field Teams
 
 ## Overview
 
-ACTO SuperAgent is a full-stack AI copilot demo designed for pharmaceutical field teams, including Medical Science Liaisons and Sales Representatives.
+ SuperAgent is a full-stack AI copilot demo designed for pharmaceutical field teams, including Medical Science Liaisons and Sales Representatives.
 
 The project simulates how an AI assistant can support healthcare professional conversations by helping users access drug information, respond to objections, generate CRM-ready actions, identify compliance risks, and personalize responses using HCP context.
 
-This project was built to demonstrate capabilities aligned with the ACTO Agent Experience Engineer role.
+This project was built to demonstrate capabilities aligned with the  Agent Experience Engineer role.
 
 ---
 
@@ -16,7 +16,7 @@ Pharmaceutical field teams often need to quickly prepare for HCP meetings, answe
 
 These workflows can be time-consuming because information may be spread across product material, CRM notes, compliance guidelines, and physician profiles.
 
-ACTO SuperAgent demonstrates how an AI copilot can bring these workflows into one assistant experience.
+ SuperAgent demonstrates how an AI copilot can bring these workflows into one assistant experience.
 
 ---
 

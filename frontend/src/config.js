@@ -3,7 +3,7 @@ export const SKILLS = {
     color: '#0eb884',
     bg: 'rgba(14,184,132,0.1)',
     border: 'rgba(14,184,132,0.25)',
-    icon: '💊',
+    icon: '',
     id: 'drug',
   },
   'Objection Handling': {
@@ -24,14 +24,14 @@ export const SKILLS = {
     color: '#f0a84d',
     bg: 'rgba(240,168,77,0.1)',
     border: 'rgba(240,168,77,0.25)',
-    icon: '🛡️',
+    icon: '',
     id: 'compliance',
   },
   'HCP Profile': {
     color: '#f06b8a',
     bg: 'rgba(240,107,138,0.1)',
     border: 'rgba(240,107,138,0.25)',
-    icon: '📋',
+    icon: '',
     id: 'hcp',
   },
 }

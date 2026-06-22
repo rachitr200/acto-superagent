@@ -51,7 +51,7 @@ export function AgentMessage({ data, isStreaming }) {
               style={styles.reasoningHeader}
               onClick={() => setReasoningOpen(o => !o)}
             >
-              <span>🧠</span>
+              <span></span>
               <span>agent reasoning</span>
               <span style={{ marginLeft: 'auto', fontSize: 10, opacity: 0.6 }}>
                 {reasoningOpen ? '▲' : '▼'}
@@ -67,7 +67,7 @@ export function AgentMessage({ data, isStreaming }) {
 
         {data.compliance_flag && (
           <div style={styles.complianceBlock}>
-            <span>⚠️</span>
+            <span></span>
             <div>
               <div style={{ fontWeight: 600, marginBottom: 2 }}>Compliance Flag</div>
               <div style={{ opacity: 0.85 }}>{data.compliance_flag}</div>

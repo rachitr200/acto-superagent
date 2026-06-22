@@ -1,4 +1,4 @@
-# Architecture Document - ACTO SuperAgent MVP
+# Architecture Document -  SuperAgent MVP
 
 ## System Objective
 
@@ -403,7 +403,7 @@ Measure:
 
 ## Interview Explanation
 
-I built ACTO SuperAgent to demonstrate how AI agents can support pharmaceutical field teams in realistic workflows.
+I built  SuperAgent to demonstrate how AI agents can support pharmaceutical field teams in realistic workflows.
 
 Rather than building a generic chatbot, I focused on creating a structured assistant that can:
 
