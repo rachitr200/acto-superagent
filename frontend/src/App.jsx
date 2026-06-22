@@ -83,9 +83,15 @@ export default function App() {
               <div style={styles.hcpSpec}>{HCP.specialty} · {HCP.hospital} · {HCP.city}</div>
             </div>
           </div>
-          <div style={styles.complianceBadge}>
-             FDA 21 CFR Part 11 active
-          </div>
+          <div style={styles.headerBadges}>
+  <div style={styles.demoBadge}>
+    Demo
+  </div>
+
+  <div style={styles.complianceBadge}>
+    FDA 21 CFR Part 11 active
+  </div>
+</div>
         </div>
 
         <div style={styles.messages}>
@@ -177,6 +183,21 @@ const styles = {
   },
   hcpName: { fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' },
   hcpSpec: { fontSize: 11.5, color: 'var(--text-secondary)' },
+  headerBadges: {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 8,
+},
+
+demoBadge: {
+  fontSize: 11,
+  padding: '4px 11px',
+  borderRadius: 99,
+  background: 'rgba(245,158,11,0.08)',
+  border: '1px solid rgba(245,158,11,0.25)',
+  color: '#f59e0b',
+  cursor: 'pointer',
+},
   complianceBadge: {
     fontSize: 11,
     padding: '4px 11px',
